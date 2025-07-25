@@ -84,6 +84,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     pkgs.git
+    minecraft
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -113,4 +114,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+
+  boot.loader.grub.extraEntries = ''
+    menuentry "Minecraft Launcher" {
+      linux /boot/vmlinuz-linux
+      initrd /boot/initramfs-linux.img
+      options root=/dev/sdX quiet
+      # Ici tu pourrais appeler le script que tu as créé
+    }
+  '';
 }
