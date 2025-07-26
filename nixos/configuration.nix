@@ -81,6 +81,14 @@
   # Lister les paquets installés dans le profil système. Pour rechercher un paquet, utilisez :
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  
+    pkgs.vscodium
+    pkgs.python314
+    pkgs.jetbrains.pycharm-community-src
+    
+
+
+
   #  vim # N’oubliez pas d’ajouter un éditeur pour modifier ce fichier ! Nano est installé par défaut.
   #  wget
   ];
@@ -96,7 +104,7 @@
   # Liste des services à activer :
 
   # Activer le service OpenSSH.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Ouvrir des ports dans le pare-feu.
   # networking.firewall.allowedTCPPorts = [ ... ];
